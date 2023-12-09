@@ -53,11 +53,11 @@ if (year == null || month == null || day == null){
 }
 String[] dates = { year, month, day };
 
-session.setAttribute("dates", dates);
-session.setAttribute("date", Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+request.setAttribute("dates", dates);
+request.setAttribute("date", Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 
 String event = (String)eventMap.get(year + month + day);
-session.setAttribute("event", event);
+request.setAttribute("event", event);
 %>
 
 <!DOCTYPE html>
